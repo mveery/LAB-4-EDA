@@ -20,11 +20,8 @@ public class Hospital {
 
     public void registrarPaciente(Paciente p) {
         p.registrarCambio("Ingresado a Sala de Espera");
-
         colaAtencion.insertar(p); // inserta en la cola de prioridad
         salaEspera.put(p.getId(), p); // inserta en la sala de espera
-
-        System.out.println("Paciente ingresado: " + p.getNombre());
     }
 
     public Paciente atenderSiguiente() {
@@ -39,8 +36,6 @@ public class Hospital {
         // agrego al historico de pacientes
         atendido.registrarCambio("Atendido");
         historicoPacientes.insertar(atendido);
-        // actualizo atendido
-        System.out.println("Atendiendo a: " + atendido.getNombre());
         return atendido;
     }
 
@@ -55,7 +50,7 @@ public class Hospital {
     // muestra el historico de pacientes atendidos
     public void mostrarHistorico() {
         List<Paciente> lista = historicoPacientes.obtenerPacientesEnOrden();
-        System.out.println("--- Histórico ---");
+        System.out.println("--- Historial ---");
         for (Paciente p : lista) {
             System.out.println(p);
         }
