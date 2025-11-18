@@ -284,6 +284,7 @@ public class Main {
 
         // simulacion minuto a minuto
         for (int t = 0; t < minutosDia; t++) {
+
             // llega un paciente cada "tasaLlegada" minutos correspondientes
             if (t % tasaLlegada == 0) {
                 contadorPacientes++; // suma 1 al contador en secuencia
@@ -316,7 +317,7 @@ public class Main {
         int totalEsperando = 0;
         // recorre categorias
         for (int c = 1; c <= 5; c++) {
-            int index = c - 1; // índice ajustado
+            int index = c - 1;
             int esperando = contLlegadas[index] - contAtendidos[index];
             double promedio = 0.0;
             // calcula promedio de espera
